@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://cmnx22fgailrx"]
+
+[ext_resource type="Script" path="res://character_body_3d.gd" id="1_c86td"]
+[ext_resource type="Texture2D" uid="uid://djvm5aw3hffhl" path="res://Assets/Small_Slime/Spritesheets/vibrant_colors/000_idle.png" id="2_gqa6q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxrmk"]
+atlas = ExtResource("2_gqa6q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxlb1"]
+atlas = ExtResource("2_gqa6q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msun7"]
+atlas = ExtResource("2_gqa6q")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hydd"]
+atlas = ExtResource("2_gqa6q")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwrhy"]
+atlas = ExtResource("2_gqa6q")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2hvl"]
+atlas = ExtResource("2_gqa6q")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rohfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxrmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxlb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msun7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hydd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwrhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2hvl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_w658o"]
+height = 0.55888
+
+[node name="Slime" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_c86td")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D"]
+billboard = 1
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_rohfr")
+autoplay = "default"
+frame_progress = 0.732188
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.109293, 0)
+shape = SubResource("CylinderShape3D_w658o")

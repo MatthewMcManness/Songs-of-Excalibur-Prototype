@@ -1,0 +1,142 @@
+[gd_scene load_steps=20 format=3 uid="uid://2hgjmvk66ao1"]
+
+[ext_resource type="Texture2D" uid="uid://bit8t0ccdovxd" path="res://Assets/Pixel Art Spruce Tree Pack/Pine Tree/GREEN/Pine Tree - GREEN  - Spritesheet.png" id="1_w4fce"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hisg0"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(0, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlmet"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(53, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qdss"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(106, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qvab"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(159, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo36w"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(212, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llqxe"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(265, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmfuq"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(318, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltjvn"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(371, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0372e"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(424, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjqcq"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(477, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwldc"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(530, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyrtv"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(583, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsb6t"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(636, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nesfa"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(689, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dder7"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(742, 0, 53, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxa6k"]
+atlas = ExtResource("1_w4fce")
+region = Rect2(795, 0, 53, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ji3on"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hisg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlmet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qdss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qvab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vo36w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llqxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmfuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltjvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0372e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjqcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwldc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyrtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsb6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nesfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dder7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxa6k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uw0kh"]
+
+[node name="Tree" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="StaticBody3D"]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+billboard = 2
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ji3on")
+autoplay = "default"
+frame_progress = 0.433822
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CapsuleShape3D_uw0kh")

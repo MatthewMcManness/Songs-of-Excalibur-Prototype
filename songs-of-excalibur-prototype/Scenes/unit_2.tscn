@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=3 uid="uid://pcx30wprop7b"]
+
+[ext_resource type="Texture2D" uid="uid://cls6iscn87fg1" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_0.png" id="1_df786"]
+[ext_resource type="Script" path="res://Unit_Controller_2.gd" id="2_1dk0u"]
+[ext_resource type="Texture2D" uid="uid://bculghoyereth" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_1.png" id="2_qi4si"]
+[ext_resource type="Texture2D" uid="uid://6vs1t0o0om1q" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_2.png" id="3_mcrfc"]
+[ext_resource type="Texture2D" uid="uid://b7q4gebqll23k" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_3.png" id="4_sydo0"]
+[ext_resource type="Texture2D" uid="uid://dtbo5ihm58awv" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_5.png" id="5_7qk1p"]
+[ext_resource type="Texture2D" uid="uid://cqcboa8g60c1c" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_4.png" id="5_wajsk"]
+[ext_resource type="Texture2D" uid="uid://dcc8uell086rl" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_6.png" id="6_edeac"]
+[ext_resource type="Texture2D" uid="uid://dinflwywme7ws" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_7.png" id="7_l71yj"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_omabv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82yfl"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0)
+texture_filter = 0
+billboard_mode = 2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfj73"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_df786")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qi4si")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mcrfc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sydo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wajsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7qk1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_edeac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l71yj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Unit2" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_omabv")
+surface_material_override/0 = SubResource("StandardMaterial3D_82yfl")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0801681, 0)
+omni_range = 2.0
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="MeshInstance3D"]
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_yfj73")
+animation = &"new_animation"
+autoplay = "default"
+
+[node name="Unit Controller" type="Node" parent="."]
+script = ExtResource("2_1dk0u")

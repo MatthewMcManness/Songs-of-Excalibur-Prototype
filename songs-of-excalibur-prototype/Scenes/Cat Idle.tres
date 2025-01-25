@@ -1,0 +1,26 @@
+[gd_resource type="AnimatedTexture" load_steps=8 format=3 uid="uid://55ivd4d32214"]
+
+[ext_resource type="Texture2D" uid="uid://cls6iscn87fg1" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_0.png" id="1_oomcs"]
+[ext_resource type="Texture2D" uid="uid://bculghoyereth" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_1.png" id="2_1sy0b"]
+[ext_resource type="Texture2D" uid="uid://6vs1t0o0om1q" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_2.png" id="3_c146r"]
+[ext_resource type="Texture2D" uid="uid://b7q4gebqll23k" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_3.png" id="4_d64ri"]
+[ext_resource type="Texture2D" uid="uid://dtbo5ihm58awv" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_5.png" id="5_wyw3u"]
+[ext_resource type="Texture2D" uid="uid://dcc8uell086rl" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_6.png" id="6_3nq7i"]
+[ext_resource type="Texture2D" uid="uid://dinflwywme7ws" path="res://Assets/Cat Knight/Sprites/Cat Knight/Idle/CatKnight_Idle_7.png" id="7_gbwki"]
+
+[resource]
+frames = 7
+speed_scale = 5.0
+frame_0/texture = ExtResource("1_oomcs")
+frame_1/texture = ExtResource("2_1sy0b")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_c146r")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_d64ri")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_wyw3u")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("6_3nq7i")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("7_gbwki")
+frame_6/duration = 1.0

@@ -1,0 +1,32 @@
+[gd_resource type="AnimatedTexture" load_steps=10 format=3 uid="uid://khwd12ikw11l"]
+
+[ext_resource type="Texture2D" uid="uid://dmavqunsf1qa0" path="res://Assets/Cat Knight/Sprites/Cat Knight/Attack1/CatKnight_Attack1_0.png" id="1_vhjbs"]
+[ext_resource type="Texture2D" uid="uid://xosiqknokyvk" path="res://Assets/Cat Knight/Sprites/Cat Knight/Attack1/CatKnight_Attack1_1.png" id="2_nubbb"]
+[ext_resource type="Texture2D" uid="uid://cn7vxbswes3u0" path="res://Assets/Cat Knight/Sprites/Cat Knight/Attack1/CatKnight_Attack1_2.png" id="3_dd87a"]
+[ext_resource type="Texture2D" uid="uid://dkf7ysfwjdxtd" path="res://Assets/Cat Knight/Sprites/Cat Knight/Attack1/CatKnight_Attack1_3.png" id="4_i1si1"]
+[ext_resource type="Texture2D" uid="uid://42pny103q5mu" path="res://Assets/Cat Knight/Sprites/Cat Knight/Recover1/CatKnight_Recover1_0.png" id="5_xmbgg"]
+[ext_resource type="Texture2D" uid="uid://7ky3wj1vuahl" path="res://Assets/Cat Knight/Sprites/Cat Knight/Recover1/CatKnight_Recover1_1.png" id="6_b7bfv"]
+[ext_resource type="Texture2D" uid="uid://d3qlq70mtown6" path="res://Assets/Cat Knight/Sprites/Cat Knight/Recover1/CatKnight_Recover1_2.png" id="7_jqrxx"]
+[ext_resource type="Texture2D" uid="uid://b384ox5t0dov7" path="res://Assets/Cat Knight/Sprites/Cat Knight/Recover1/CatKnight_Recover1_3.png" id="8_ko56u"]
+[ext_resource type="Texture2D" uid="uid://4ycsuee80eqf" path="res://Assets/Cat Knight/Sprites/Cat Knight/Recover1/CatKnight_Recover1_4.png" id="9_ehjrv"]
+
+[resource]
+frames = 9
+speed_scale = 15.0
+frame_0/texture = ExtResource("1_vhjbs")
+frame_1/texture = ExtResource("2_nubbb")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_dd87a")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_i1si1")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_xmbgg")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("6_b7bfv")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("7_jqrxx")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("8_ko56u")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("9_ehjrv")
+frame_8/duration = 1.0
