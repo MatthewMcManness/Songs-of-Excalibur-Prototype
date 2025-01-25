@@ -1,74 +1,151 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmnx22fgailrx"]
+[gd_scene load_steps=17 format=3 uid="uid://cdbmyfxhu86x6"]
 
-[ext_resource type="Script" path="res://character_body_3d.gd" id="1_c86td"]
-[ext_resource type="Texture2D" uid="uid://djvm5aw3hffhl" path="res://Assets/Small_Slime/Spritesheets/vibrant_colors/000_idle.png" id="2_gqa6q"]
+[ext_resource type="Texture2D" uid="uid://qvdci0c58hjh" path="res://Assets/Small_Slime/Spritesheets/basic_colors/001_dash_v.png" id="1_0om7t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cxrmk"]
-atlas = ExtResource("2_gqa6q")
+[sub_resource type="GDScript" id="GDScript_1aaxq"]
+resource_name = "Enemy Movement"
+script/source = "extends CharacterBody3D
+
+const SPEED = 1.0
+const GRAVITY = Vector3(0, -9.8, 0)
+
+func _physics_process(delta: float) -> void:
+	# Gravity
+	if not is_on_floor():
+		velocity += GRAVITY * delta
+
+	# Correct path to the player (since both Slime and Unit are children of \"Game\")
+	var player = get_node(\"../Unit\")  # or get_node(\"/root/Game/Unit\")
+
+	if player:
+		# Calculate direction on XZ plane only
+		var direction = player.global_transform.origin - global_transform.origin
+		direction.y = 0
+		direction = direction.normalized()
+
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+
+		# Flip sprite if moving left
+		# Check velocity.x (negative if moving left, positive if moving right)
+		if velocity.x < 0:
+			$AnimatedSprite3D.flip_h = true
+		elif velocity.x > 0:
+			$AnimatedSprite3D.flip_h = false
+	else:
+		# Idle behavior when no player is found
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+
+	move_and_slide()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cdt1"]
+atlas = ExtResource("1_0om7t")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vxlb1"]
-atlas = ExtResource("2_gqa6q")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gsu1"]
+atlas = ExtResource("1_0om7t")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_msun7"]
-atlas = ExtResource("2_gqa6q")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptbsb"]
+atlas = ExtResource("1_0om7t")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8hydd"]
-atlas = ExtResource("2_gqa6q")
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5ean"]
+atlas = ExtResource("1_0om7t")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xwrhy"]
-atlas = ExtResource("2_gqa6q")
+[sub_resource type="AtlasTexture" id="AtlasTexture_nddko"]
+atlas = ExtResource("1_0om7t")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o2hvl"]
-atlas = ExtResource("2_gqa6q")
+[sub_resource type="AtlasTexture" id="AtlasTexture_t10pt"]
+atlas = ExtResource("1_0om7t")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rohfr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ildu"]
+atlas = ExtResource("1_0om7t")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o74ym"]
+atlas = ExtResource("1_0om7t")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cmo1"]
+atlas = ExtResource("1_0om7t")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8k65"]
+atlas = ExtResource("1_0om7t")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hm5u"]
+atlas = ExtResource("1_0om7t")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_subpx"]
+atlas = ExtResource("1_0om7t")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxwyw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cxrmk")
+"texture": SubResource("AtlasTexture_1cdt1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vxlb1")
+"texture": SubResource("AtlasTexture_6gsu1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_msun7")
+"texture": SubResource("AtlasTexture_ptbsb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8hydd")
+"texture": SubResource("AtlasTexture_x5ean")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xwrhy")
+"texture": SubResource("AtlasTexture_nddko")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o2hvl")
+"texture": SubResource("AtlasTexture_t10pt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ildu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o74ym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cmo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8k65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hm5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_subpx")
 }],
 "loop": true,
-"name": &"default",
+"name": &"move",
 "speed": 5.0
 }]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_w658o"]
-height = 0.55888
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_p81e8"]
+height = 0.0645466
+radius = 0.05
 
-[node name="Slime" type="Node3D"]
+[node name="Slime" type="CharacterBody3D"]
+script = SubResource("GDScript_1aaxq")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-script = ExtResource("1_c86td")
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D"]
-billboard = 1
-shaded = true
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.113755, 0)
 texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_rohfr")
-autoplay = "default"
-frame_progress = 0.732188
+sprite_frames = SubResource("SpriteFrames_cxwyw")
+animation = &"move"
+autoplay = "move"
+frame_progress = 0.947275
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.109293, 0)
-shape = SubResource("CylinderShape3D_w658o")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_p81e8")

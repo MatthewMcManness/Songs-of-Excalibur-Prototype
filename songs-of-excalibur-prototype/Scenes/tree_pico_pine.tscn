@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dpay1kr5v2bnt"]
+[gd_scene load_steps=33 format=3 uid="uid://djln4mn7i4y4t"]
 
 [ext_resource type="Texture2D" uid="uid://bsycymeq0yxjs" path="res://Assets/Pixel Art Spruce Tree Pack/Pico Pine Tree/GREEN/Pico Pine Tree - GREEN - Spritesheet.png" id="1_t8bjg"]
 
@@ -220,8 +220,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uw0kh"]
-
 [node name="Tree" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -234,7 +232,4 @@ shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_ji3on")
 autoplay = "default"
-frame_progress = 0.38973
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("CapsuleShape3D_uw0kh")
+frame_progress = 0.42231

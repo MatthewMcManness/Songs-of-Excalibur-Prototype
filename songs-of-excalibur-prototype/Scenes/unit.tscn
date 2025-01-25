@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbbp8kl0l81p4"]
+[gd_scene load_steps=4 format=3 uid="uid://d06hw3fife0bq"]
 
-[ext_resource type="SpriteFrames" uid="uid://biw07tn0a5smu" path="res://Scenes/unit.tres" id="1_ejuy0"]
+[ext_resource type="SpriteFrames" path="res://Scenes/unit.tres" id="1_ejuy0"]
 
 [sub_resource type="GDScript" id="GDScript_3r3ar"]
 script/source = "extends CharacterBody3D

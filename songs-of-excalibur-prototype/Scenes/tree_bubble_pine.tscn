@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://beubfgfjnnx30"]
+[gd_scene load_steps=33 format=3 uid="uid://8sir2hoqjo81"]
 
 [ext_resource type="Texture2D" uid="uid://c231x1ar0ms3c" path="res://Assets/Pixel Art Spruce Tree Pack/Bubble Pine Tree/GREEN/Bubble Pine Tree - GREEN - Spritesheet.png" id="1_m4qe3"]
 
@@ -220,8 +220,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uw0kh"]
-
 [node name="Tree" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -234,7 +232,4 @@ shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_ji3on")
 autoplay = "default"
-frame_progress = 0.901643
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("CapsuleShape3D_uw0kh")
+frame_progress = 0.972612
