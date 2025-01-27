@@ -1,25 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://b75aplulgwf3b"]
+[gd_scene load_steps=5 format=3 uid="uid://b75aplulgwf3b"]
+
+[ext_resource type="Shader" path="res://Scenes/worldGrid.gdshader" id="1_ywre5"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6qtmr"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_5xgn0"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_0gyjh"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mddh"]
-albedo_color = Color(0, 0.317647, 0, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5hr8f"]
+render_priority = 0
+shader = ExtResource("1_ywre5")
+shader_parameter/color_bg = Vector4(0.008, 0.212, 0.063, 1)
+shader_parameter/color_line = Vector4(0, 0, 0, 1.025)
+shader_parameter/cell_size = 0.5
+shader_parameter/line_thickness = 0.01
 
 [node name="World" type="Node3D"]
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_6qtmr")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(100, 0, 0, 0, 0.15, 0, 0, 0, 100, 0, 0, 0)
-mesh = SubResource("PlaneMesh_5xgn0")
-skeleton = NodePath("../StaticBody3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_6mddh")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+transform = Transform3D(100, 0, 0, 0, 0.1, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("PlaneMesh_0gyjh")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_5hr8f")

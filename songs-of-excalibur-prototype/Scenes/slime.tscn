@@ -141,11 +141,12 @@ script = SubResource("GDScript_1aaxq")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.113755, 0)
+billboard = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_cxwyw")
 animation = &"move"
 autoplay = "move"
-frame_progress = 0.947275
+frame_progress = 0.917774
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_p81e8")

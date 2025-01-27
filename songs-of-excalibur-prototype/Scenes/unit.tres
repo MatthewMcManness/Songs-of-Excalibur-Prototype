@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=59 format=3 uid="uid://biw07tn0a5smu"]
+[gd_resource type="SpriteFrames" load_steps=81 format=3 uid="uid://bkboxcfhmot3w"]
 
 [ext_resource type="Texture2D" uid="uid://drdiu4keasmwf" path="res://Assets/Cat Knight/Sprites/Cat Knight/CatKnight.png" id="1_3bqxb"]
 [ext_resource type="Texture2D" uid="uid://dmavqunsf1qa0" path="res://Assets/Cat Knight/Sprites/Cat Knight/Attack1/CatKnight_Attack1_0.png" id="1_3c73x"]
@@ -21,27 +21,49 @@
 [ext_resource type="Texture2D" uid="uid://bqnu5pqgujcbx" path="res://Assets/Cat Knight/Sprites/Cat Knight/Fall/CatKnight_Fall_2.png" id="18_mukhl"]
 [ext_resource type="Texture2D" uid="uid://blfoegc42ibs3" path="res://Assets/Cat Knight/Sprites/Cat Knight/Fall/CatKnight_Fall_3.png" id="19_b7k08"]
 [ext_resource type="Texture2D" uid="uid://b4y7kn5ycb50n" path="res://Assets/Cat Knight/Sprites/Cat Knight/Roll/CatKnight_Roll_0.png" id="20_x7lw2"]
+[ext_resource type="Texture2D" uid="uid://nbc1gnlcsksr" path="res://Assets/Lord (Sword)/Sword_000.png" id="21_0x8rd"]
 [ext_resource type="Texture2D" uid="uid://cke4bierptrw" path="res://Assets/Cat Knight/Sprites/Cat Knight/Roll/CatKnight_Roll_1.png" id="21_xqsrs"]
+[ext_resource type="Texture2D" uid="uid://dkoecnme0d6we" path="res://Assets/Lord (Sword)/Sword_001.png" id="22_m3pib"]
 [ext_resource type="Texture2D" uid="uid://u02rjf77nmyn" path="res://Assets/Cat Knight/Sprites/Cat Knight/Roll/CatKnight_Roll_2.png" id="22_xecf6"]
+[ext_resource type="Texture2D" uid="uid://bit2gqnehd5ri" path="res://Assets/Lord (Sword)/Sword_002.png" id="23_olr1x"]
 [ext_resource type="Texture2D" uid="uid://brke24xmlftv6" path="res://Assets/Cat Knight/Sprites/Cat Knight/Roll/CatKnight_Roll_3.png" id="23_pvrlo"]
+[ext_resource type="Texture2D" uid="uid://cdr5t2xhm0t7l" path="res://Assets/Lord (Sword)/Sword_003.png" id="24_qh63y"]
 [ext_resource type="Texture2D" uid="uid://barebj3lms067" path="res://Assets/Cat Knight/Sprites/Cat Knight/Roll/CatKnight_Roll_4.png" id="24_ylrgo"]
 [ext_resource type="Texture2D" uid="uid://d0wcrsxl1x0jb" path="res://Assets/Cat Knight/Sprites/Cat Knight/Roll/CatKnight_Roll_5.png" id="25_461yn"]
+[ext_resource type="Texture2D" uid="uid://dcrqk4qvck0xc" path="res://Assets/Lord (Sword)/Sword_004.png" id="25_txyeh"]
 [ext_resource type="Texture2D" uid="uid://cce5yhvk7xl2a" path="res://Assets/Cat Knight/Sprites/Cat Knight/Roll/CatKnight_Roll_6.png" id="26_0ws6n"]
+[ext_resource type="Texture2D" uid="uid://diomrirevqd5m" path="res://Assets/Lord (Sword)/Sword_005.png" id="26_6hjfm"]
 [ext_resource type="Texture2D" uid="uid://cckndgafgjefr" path="res://Assets/Cat Knight/Sprites/Cat Knight/Run/CatKnight_Run_0.png" id="27_51dgu"]
+[ext_resource type="Texture2D" uid="uid://btl4wdsir6bjc" path="res://Assets/Lord (Sword)/Sword_006.png" id="27_r7jkr"]
 [ext_resource type="Texture2D" uid="uid://dblyc0ktguck1" path="res://Assets/Cat Knight/Sprites/Cat Knight/Run/CatKnight_Run_1.png" id="28_4cvs0"]
+[ext_resource type="Texture2D" uid="uid://cgm1whcgb1era" path="res://Assets/Lord (Sword)/Sword_007.png" id="28_7ex8q"]
+[ext_resource type="Texture2D" uid="uid://c84bmg48hw7l7" path="res://Assets/Lord (Sword)/Sword_008.png" id="29_62388"]
 [ext_resource type="Texture2D" uid="uid://p35ohyf01jl5" path="res://Assets/Cat Knight/Sprites/Cat Knight/Run/CatKnight_Run_2.png" id="29_fsbvl"]
+[ext_resource type="Texture2D" uid="uid://bpqo2lr140sj4" path="res://Assets/Lord (Sword)/Sword_009.png" id="30_qte5n"]
 [ext_resource type="Texture2D" uid="uid://b0y3ksqa2rabv" path="res://Assets/Cat Knight/Sprites/Cat Knight/Run/CatKnight_Run_3.png" id="30_vrma8"]
+[ext_resource type="Texture2D" uid="uid://c6ikpdbl7tu0x" path="res://Assets/Lord (Sword)/Sword_010.png" id="31_82n5u"]
 [ext_resource type="Texture2D" uid="uid://c4ahl4rugfbjs" path="res://Assets/Cat Knight/Sprites/Cat Knight/Run/CatKnight_Run_4.png" id="31_bv26u"]
 [ext_resource type="Texture2D" uid="uid://cxpyujoi8sgv1" path="res://Assets/Cat Knight/Sprites/Cat Knight/Run/CatKnight_Run_5.png" id="32_06xea"]
+[ext_resource type="Texture2D" uid="uid://bvrlfe8uivme" path="res://Assets/Lord (Sword)/Sword_011.png" id="32_b0dmy"]
 [ext_resource type="Texture2D" uid="uid://ccvx3bnva5g1m" path="res://Assets/Cat Knight/Sprites/Cat Knight/Run/CatKnight_Run_6.png" id="33_hhip5"]
+[ext_resource type="Texture2D" uid="uid://mhfdec0uanha" path="res://Assets/Lord (Sword)/Sword_012.png" id="33_sxqca"]
 [ext_resource type="Texture2D" uid="uid://bn3r7qbyrqcxs" path="res://Assets/Cat Knight/Sprites/Cat Knight/Run/CatKnight_Run_7.png" id="34_4bvmn"]
+[ext_resource type="Texture2D" uid="uid://dgm0n4eld6abd" path="res://Assets/Lord (Sword)/Sword_013.png" id="34_6f1rm"]
 [ext_resource type="Texture2D" uid="uid://bvv0tilow8hv4" path="res://Assets/Cat Knight/Sprites/Cat Knight/Run/CatKnight_Run_8.png" id="35_f55kd"]
+[ext_resource type="Texture2D" uid="uid://7xsn7i42hvuf" path="res://Assets/Lord (Sword)/Sword_014.png" id="35_qtfmu"]
 [ext_resource type="Texture2D" uid="uid://b21m4ptrv0ccs" path="res://Assets/Cat Knight/Sprites/Cat Knight/Run/CatKnight_Run_9.png" id="36_rnhhy"]
+[ext_resource type="Texture2D" uid="uid://0dts6stggtc4" path="res://Assets/Lord (Sword)/Sword_015.png" id="36_yys2k"]
 [ext_resource type="Texture2D" uid="uid://42pny103q5mu" path="res://Assets/Cat Knight/Sprites/Cat Knight/Recover1/CatKnight_Recover1_0.png" id="37_jblo4"]
+[ext_resource type="Texture2D" uid="uid://4gleui54lfa8" path="res://Assets/Lord (Sword)/Sword_016.png" id="37_rsplg"]
+[ext_resource type="Texture2D" uid="uid://c0447j4pba38s" path="res://Assets/Lord (Sword)/Sword_017.png" id="38_0kvrh"]
 [ext_resource type="Texture2D" uid="uid://7ky3wj1vuahl" path="res://Assets/Cat Knight/Sprites/Cat Knight/Recover1/CatKnight_Recover1_1.png" id="38_3ggm1"]
 [ext_resource type="Texture2D" uid="uid://d3qlq70mtown6" path="res://Assets/Cat Knight/Sprites/Cat Knight/Recover1/CatKnight_Recover1_2.png" id="39_s16g0"]
+[ext_resource type="Texture2D" uid="uid://dr2x5mm7s2ysj" path="res://Assets/Lord (Sword)/Sword_018.png" id="39_trdjw"]
+[ext_resource type="Texture2D" uid="uid://bmhvym2mt6kte" path="res://Assets/Lord (Sword)/Sword_019.png" id="40_o0un4"]
 [ext_resource type="Texture2D" uid="uid://b384ox5t0dov7" path="res://Assets/Cat Knight/Sprites/Cat Knight/Recover1/CatKnight_Recover1_3.png" id="40_vx3bk"]
 [ext_resource type="Texture2D" uid="uid://4ycsuee80eqf" path="res://Assets/Cat Knight/Sprites/Cat Knight/Recover1/CatKnight_Recover1_4.png" id="41_hhkyl"]
+[ext_resource type="Texture2D" uid="uid://13byocbrkcvb" path="res://Assets/Lord (Sword)/Sword_020.png" id="41_n75sp"]
+[ext_resource type="Texture2D" uid="uid://duii6lsdy5jw5" path="res://Assets/Lord (Sword)/Sword_021.png" id="42_b71pl"]
 [ext_resource type="Texture2D" uid="uid://d1s5juyds5j2d" path="res://Assets/Cat Knight/Sprites/Cat Knight/Attack3/CatKnight_Attack3_0.png" id="42_c2o24"]
 [ext_resource type="Texture2D" uid="uid://bb8guu5dkh1ro" path="res://Assets/Cat Knight/Sprites/Cat Knight/Attack3/CatKnight_Attack3_1.png" id="43_ynoi7"]
 [ext_resource type="Texture2D" uid="uid://bnk0ateosisob" path="res://Assets/Cat Knight/Sprites/Cat Knight/Attack3/CatKnight_Attack3_2.png" id="44_fc2sk"]
@@ -173,6 +195,77 @@ animations = [{
 }],
 "loop": false,
 "name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_0x8rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_m3pib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_olr1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qh63y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_txyeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6hjfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_r7jkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_7ex8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_62388")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_qte5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_82n5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_b0dmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_sxqca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_6f1rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_qtfmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_yys2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_rsplg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_0kvrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_trdjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_o0un4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_n75sp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_b71pl")
+}],
+"loop": false,
+"name": &"Lord_Sword",
 "speed": 5.0
 }, {
 "frames": [{

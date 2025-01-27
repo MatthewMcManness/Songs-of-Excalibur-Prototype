@@ -1,11 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bq6ydbw58f5gt"]
+[gd_scene load_steps=3 format=3 uid="uid://bq6ydbw58f5gt"]
 
 [ext_resource type="PackedScene" uid="uid://d06hw3fife0bq" path="res://Scenes/unit.tscn" id="1_6vvub"]
 [ext_resource type="PackedScene" uid="uid://b75aplulgwf3b" path="res://Scenes/world.tscn" id="2_x2x8a"]
-[ext_resource type="PackedScene" path="res://Scenes/tree_spruce.tscn" id="3_ygcnb"]
-[ext_resource type="PackedScene" path="res://Scenes/tree_pine.tscn" id="4_ep04o"]
-[ext_resource type="PackedScene" uid="uid://8sir2hoqjo81" path="res://Scenes/tree_bubble_pine.tscn" id="5_qhgt8"]
-[ext_resource type="PackedScene" uid="uid://cdbmyfxhu86x6" path="res://Scenes/slime.tscn" id="6_frds1"]
 
 [node name="Game" type="Node3D"]
 
@@ -13,27 +9,3 @@
 
 [node name="Unit" parent="." instance=ExtResource("1_6vvub")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
-
-[node name="Tree" parent="." instance=ExtResource("3_ygcnb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.904843, 0.620813, 1.03036)
-
-[node name="Tree2" parent="." instance=ExtResource("4_ep04o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2156, 0.468742, 0.77498)
-
-[node name="Tree3" parent="." instance=ExtResource("5_qhgt8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47734, 0.441516, -1.84405)
-
-[node name="Tree4" parent="." instance=ExtResource("3_ygcnb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.12255, 0.625178, 0.447987)
-
-[node name="Tree5" parent="." instance=ExtResource("3_ygcnb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.777024, 0.616086, 1.71907)
-
-[node name="Slime" parent="." instance=ExtResource("6_frds1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77, 0.5, 2.05)
-
-[node name="Slime2" parent="." instance=ExtResource("6_frds1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.574, 0.5, 2.253)
-
-[node name="Slime3" parent="." instance=ExtResource("6_frds1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.489, 0.5, -2.878)

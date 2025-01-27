@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d06hw3fife0bq"]
+[gd_scene load_steps=5 format=3 uid="uid://d06hw3fife0bq"]
 
-[ext_resource type="SpriteFrames" path="res://Scenes/unit.tres" id="1_ejuy0"]
+[ext_resource type="SpriteFrames" uid="uid://bkboxcfhmot3w" path="res://Scenes/unit.tres" id="1_ejuy0"]
 
 [sub_resource type="GDScript" id="GDScript_3r3ar"]
 script/source = "extends CharacterBody3D
@@ -9,7 +9,9 @@ script/source = "extends CharacterBody3D
 const SPEED = 2.0
 const JUMP_VELOCITY = 2.7
 
-
+func _ready() -> void:
+	$AnimatedSprite3D.stop()
+	$AnimatedSprite3D.frame = 0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -19,22 +21,25 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		$AnimatedSprite3D.play(\"Jump\",2)
 		
 	if Input.is_action_just_pressed(\"left\"):
-		$AnimatedSprite3D.flip_h = true
+		$AnimatedSprite3D.flip_h = false
+		$AnimatedSprite3D.offset = Vector2(-96, 0)
 		
 	if Input.is_action_just_pressed(\"right\"):
-		$AnimatedSprite3D.flip_h = false
+		$AnimatedSprite3D.flip_h = true
+		$AnimatedSprite3D.offset = Vector2(-32, 0)
 		
 	if Input.is_action_just_pressed(\"attack\"):
-		$AnimatedSprite3D.play(\"Triple Attack\",2)
-	
+		$AnimatedSprite3D.play(\"Lord_Sword\",2)
+		
 	if Input.is_action_pressed(\"left\") or Input.is_action_pressed(\"right\") or Input.is_action_pressed(\"up\") or Input.is_action_pressed(\"down\"):
-		$AnimatedSprite3D.play(\"Run\",2)
+		$AnimatedSprite3D.stop()
+		$AnimatedSprite3D.frame = 0
 		
 	if Input.is_action_just_released(\"left\") or Input.is_action_just_released(\"right\") or Input.is_action_just_released(\"up\") or Input.is_action_just_released(\"down\"):
-		$AnimatedSprite3D.play(\"Idle\",2)
+		$AnimatedSprite3D.stop()
+		$AnimatedSprite3D.frame = 0
 	
 
 	# Get the input direction and handle the movement/deceleration.
@@ -52,26 +57,75 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_animated_sprite_3d_animation_finished() -> void:
-	$AnimatedSprite3D.play(\"Idle\",2)
+		$AnimatedSprite3D.stop()
+		$AnimatedSprite3D.frame = 0
 "
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bf50w"]
 radius = 0.0952323
 height = 0.376455
 
+[sub_resource type="GDScript" id="GDScript_htsvk"]
+resource_name = "Grid"
+script/source = "extends Node3D
+
+# Grid parameters
+const GRID_SIZE = 10               # Number of cells per axis
+const CELL_SIZE = 1.0              # Size of each cell in world units
+
+# Data structure to store grid
+var grid = []
+
+# Generate the grid
+func _ready():
+    generate_grid()
+    # Debug: Print grid world positions
+    for cell in grid:
+        print(\"Cell position:\", cell.position)
+
+
+# Create the grid based on the grid size and cell size
+func generate_grid():
+    grid.clear()
+    for x in range(GRID_SIZE):
+        for z in range(GRID_SIZE):
+            # Calculate world position of this cell
+            var world_position = Vector3(x * CELL_SIZE, 0, z * CELL_SIZE)
+            
+            # Create a cell dictionary to store relevant data
+            var cell = {
+                \"position\": world_position,   # World position of the grid cell
+                \"walkable\": true,             # Whether the cell is walkable
+                \"occupied\": false,            # Whether a unit is on this cell
+                \"bonus\": null                 # Any special tile effects
+            }
+            grid.append(cell)
+
+# Debug: Visualize the grid in the editor
+func _process(delta):
+    for cell in grid:
+        draw_debug_box(cell.position, CELL_SIZE, Color(0, 1, 0)) # Draw each cell
+
+func draw_debug_box(position: Vector3, size: float, color: Color):
+    var debug_size = Vector3(size, 0.1, size)
+    DebugDraw.singleton.box(position - debug_size * 0.5, position + debug_size * 0.5, color)
+"
+
 [node name="CharacterBody3d" type="CharacterBody3D"]
 script = SubResource("GDScript_3r3ar")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
-billboard = 2
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+centered = false
+offset = Vector2(-96, 0)
+billboard = 1
 texture_filter = 0
 sprite_frames = ExtResource("1_ejuy0")
-animation = &"Triple Attack"
-autoplay = "Idle"
+animation = &"Lord_Sword"
+autoplay = "Lord_Sword"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.18668, 0, 0, 0, 1, 0, -0.0361213, 0)
+transform = Transform3D(1, 0, 0, 0, 1.18668, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("CapsuleShape3D_bf50w")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
@@ -79,7 +133,10 @@ transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0.413
 omni_range = 2.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0361213, 0.776925)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 1, 0.777)
+
+[node name="Node3D" type="Node3D" parent="."]
+script = SubResource("GDScript_htsvk")
 
 [connection signal="animation_finished" from="AnimatedSprite3D" to="." method="_on_animated_sprite_3d_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite3D" to="AnimatedSprite3D" method="_on_animation_finished"]
